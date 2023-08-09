@@ -11,11 +11,8 @@ p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    background-image: url('https: //static.wikia.nocookie.net/kiepscy/images/4/45/Butle.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
     color: white;
     font-family: Arial, sans-serif;
 }

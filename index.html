@@ -5,10 +5,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Toasty Kiepscy</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('https://static.wikia.nocookie.net/kiepscy/images/4/45/Butle.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #score {
+            font-weight: bold;
+            font-size: 24px;
+            margin-left: 5px;
+        }
+    </style>
 </head>
 
-<body style="background-image: url('https://static.wikia.nocookie.net/kiepscy/images/4/45/Butle.jpg');">
+<body>
     <div class="container">
         <header>
             <h1>TOASTY KIEPSCY</h1>
