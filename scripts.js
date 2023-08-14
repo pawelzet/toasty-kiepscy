@@ -14,20 +14,33 @@ let score = 0;
 
 const playRandomButton = document.getElementById('playRandom');
 const scoreElement = document.getElementById('score');
+const promilLabel = document.getElementById('promilLabel'); 
 
 playRandomButton.addEventListener('click', playRandomSound);
 
 function playRandomSound() {
-    // Shuffle the sound list
     const shuffledSounds = shuffleArray([...soundList]);
-
-    // Play the first sound in the shuffled list
     const sound = new Audio('sounds/' + shuffledSounds[0]);
     sound.play();
-
-    // Update the score
     score++;
     scoreElement.textContent = score;
+    updatePromilLabel(score);
+}
+
+function updatePromilLabel(score) {
+    if (score <= 5) {
+        promilLabel.textContent = "Jest ok";
+    } else if (score <= 10) {
+        promilLabel.textContent = "Jest lepiej";
+    } else if (score <= 15) {
+        promilLabel.textContent = "Jak nie moge to przez noge!";
+    } else if (score <= 25) {
+        promilLabel.textContent = "Fizjologom się nie śniło";
+    } else if (score === 26) {
+        promilLabel.textContent = "Czas do domu?";
+    } else {
+        promilLabel.textContent = "Kaniec Filma, Kancjerta nie będzie";
+    }
 }
 
 function shuffleArray(array) {
