@@ -11,6 +11,7 @@ const soundList = [
 ];
 
 let score = 0;
+let playing = false;
 
 const playRandomButton = document.getElementById('playRandom');
 const scoreElement = document.getElementById('score');
@@ -19,9 +20,17 @@ const promilLabel = document.getElementById('promilLabel');
 playRandomButton.addEventListener('click', playRandomSound);
 
 function playRandomSound() {
+    if (playing) {
+        return;
+    }
+
+    playing = true; 
     const shuffledSounds = shuffleArray([...soundList]);
     const sound = new Audio('sounds/' + shuffledSounds[0]);
     sound.play();
+    sound.onended = function () {
+        playing = false;
+    };
     score++;
     scoreElement.textContent = score;
     updatePromilLabel(score);
@@ -29,11 +38,11 @@ function playRandomSound() {
 
 function updatePromilLabel(score) {
     if (score <= 5) {
-        promilLabel.textContent = "Jest ok";
+        promilLabel.textContent = "No to wyciągajcie te wagoniki i jedziemy tym pociągiem!";
     } else if (score <= 10) {
-        promilLabel.textContent = "Jest lepiej";
+        promilLabel.textContent = "Chyba trzeba będzie dokupić";
     } else if (score <= 15) {
-        promilLabel.textContent = "Jak nie moge to przez noge!";
+        promilLabel.textContent = "Trzeba dokupić, najlepiej dwie - po co dwa razy latać?";
     } else if (score <= 25) {
         promilLabel.textContent = "Fizjologom się nie śniło";
     } else if (score === 26) {
