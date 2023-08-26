@@ -12,6 +12,8 @@ const soundList = [
 
 let score = 0;
 let playing = false;
+let playedSounds = [];
+
 
 const playRandomButton = document.getElementById('playRandom');
 const scoreElement = document.getElementById('score');
@@ -26,8 +28,13 @@ function playRandomSound() {
     }
 
     playing = true;
-    const shuffledSounds = shuffleArray([...soundList]);
-    const sound = new Audio('sounds/' + shuffledSounds[0]);
+
+    if (playedSounds.length === 0) {
+        playedSounds = shuffleArray([...soundList]);
+    }
+
+    const soundFileName = playedSounds.pop();
+    const sound = new Audio('sounds/' + soundFileName);
 
     playIcon.style.display = 'inline';
 
@@ -40,6 +47,7 @@ function playRandomSound() {
     scoreElement.textContent = score;
     updatePromilLabel(score);
 }
+
 
 function updatePromilLabel(score) {
     if (score <= 5) {
