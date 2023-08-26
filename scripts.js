@@ -38,17 +38,17 @@ function playRandomSound() {
 
 function updatePromilLabel(score) {
     if (score <= 5) {
-        promilLabel.textContent = "No to wyciągajcie te wagoniki i jedziemy tym pociągiem!";
+        promilLabel.textContent = "Stan: Trzeźwy";
     } else if (score <= 10) {
-        promilLabel.textContent = "Chyba trzeba będzie dokupić";
+        promilLabel.textContent = "Stan: Trzeba skoczyć po drugą flaszkę";
     } else if (score <= 15) {
-        promilLabel.textContent = "Trzeba dokupić, najlepiej dwie - po co dwa razy latać?";
+        promilLabel.textContent = "Stan: Pijany";
     } else if (score <= 25) {
-        promilLabel.textContent = "Fizjologom się nie śniło";
+        promilLabel.textContent = "Stan: Urwany film";
     } else if (score === 26) {
-        promilLabel.textContent = "Czas do domu?";
+        promilLabel.textContent = "Stan: Zamów Ubera";
     } else {
-        promilLabel.textContent = "Kaniec Filma, Kancjerta nie będzie";
+        promilLabel.textContent = "Stan: Wytrzeźwiałka";
     }
 }
 
