@@ -72,3 +72,14 @@ function shuffleArray(array) {
     }
     return array;
 }
+
+const volumeSlider = document.getElementById('volumeSlider');
+
+volumeSlider.addEventListener('input', adjustVolume);
+
+function adjustVolume() {
+    const sound = document.getElementsByTagName('audio')[0];
+    if (sound) {
+        sound.volume = volumeSlider.value;
+    }
+}

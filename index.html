@@ -54,6 +54,11 @@
             display: none;
             margin-top: 10px;
         }
+
+        .volume-slider {
+            width: 80%;
+            margin: 10px;
+        }
     </style>
 </head>
 
@@ -68,6 +73,8 @@
             <button id="playRandom" class="button">Tyrtum Pyrtum</button>
             <br>
             <img id="playIcon" src="speaker-64.gif" alt="Playing icon" class="play-icon">
+            <br>
+            <input type="range" id="volumeSlider" class="volume-slider" min="0" max="1" step="0.1" value="1">
         </main>
     </div>
     <script src="scripts.js"></script>
