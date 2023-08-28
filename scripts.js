@@ -13,7 +13,7 @@ const soundList = [
 let score = 0;
 let playing = false;
 let playedSounds = [];
-
+let currentSound = null;
 
 const playRandomButton = document.getElementById('playRandom');
 const scoreElement = document.getElementById('score');
@@ -34,14 +34,15 @@ function playRandomSound() {
     }
 
     const soundFileName = playedSounds.pop();
-    const sound = new Audio('sounds/' + soundFileName);
+    currentSound = new Audio('sounds/' + soundFileName); 
 
     playIcon.style.display = 'inline';
 
-    sound.play();
-    sound.onended = function () {
+    currentSound.play();
+    currentSound.onended = function () {
         playing = false;
         playIcon.style.display = 'none';
+        currentSound = null; 
     };
     score++;
     scoreElement.textContent = score;
