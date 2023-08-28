@@ -38,6 +38,7 @@ function playRandomSound() {
 
     playIcon.style.display = 'inline';
 
+    currentSound.volume = volumeSlider.value;
     currentSound.play();
     currentSound.onended = function () {
         playing = false;
@@ -79,8 +80,7 @@ const volumeSlider = document.getElementById('volumeSlider');
 volumeSlider.addEventListener('input', adjustVolume);
 
 function adjustVolume() {
-    const sound = document.getElementsByTagName('audio')[0];
-    if (sound) {
-        sound.volume = volumeSlider.value;
+    if (currentSound) {
+        currentSound.volume = volumeSlider.value;
     }
 }
