@@ -78,6 +78,7 @@ function shuffleArray(array) {
 const volumeSlider = document.getElementById('volumeSlider');
 
 volumeSlider.addEventListener('input', adjustVolume);
+volumeSlider.addEventListener('touchmove', adjustVolume);
 
 function adjustVolume() {
     if (currentSound) {
